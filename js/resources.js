@@ -7,6 +7,8 @@ game.resources = [
         //adding the tile images so i can use them in the map
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
+        //adding a player
+        {name: "player", type:"image", src: "data/img/orcSpear.png"},
 	/* Atlases 
 	 * @example
 	 * {name: "example_tps", type: "tps", src: "data/img/example_tps.json"},
