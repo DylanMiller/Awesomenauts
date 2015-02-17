@@ -14,7 +14,7 @@ game.PlayerEntity = me.Entity.extend({
         
         this.renderable.addAnimation("idle", [78]);
         this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
-        
+        this.renderable.addAnimation("attack", [66, 67, 68, 69, 70, 71, 72], 80)
         this.renderable.setCurrentAnimation("idle");
     },
     update: function(delta){
@@ -27,6 +27,7 @@ game.PlayerEntity = me.Entity.extend({
         
       }
       
+      
       if(this.body.vel.x !== 0){
         if(!this.renderable.isCurrentAnimation("walk")) {
             this.renderable.setCurrentAnimation("walk");
@@ -34,6 +35,14 @@ game.PlayerEntity = me.Entity.extend({
     }else {
             this.renderable.setCurrentAnimation("idle"); 
         }
+        if(me.input.isKeyPressed("attack")){
+        if(!this.renderable.isCurrentAnimation("attack")){
+            console.log(this.renderable.isCurrentAnimation("attack"));
+            this.renderable.setCurrentAnimation("attack", "idle");
+            this.renderable.setAnimationFrame();
+        }
+      }
+        
             this.body.update(delta);
             
             
@@ -51,4 +60,25 @@ game.PlayerEntity = me.Entity.extend({
         
       
     
+});
+
+game.PlayerBaseEntity = me.entity.extend({
+    init function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, (
+            image: "tower",
+            width: 100,
+            height: 100,
+            spritewidth: "100",
+            spriteheight: "100",
+            getShape: function() {
+                return (new.me.Rect(0, 0, 100, 100)).toPolygon();
+            }
+        )]);
+        this.broken = false;
+        this.health = 10;
+        this.alwaysUpdate = true;
+    },
+    update:function() {
+        
+    }
 });
