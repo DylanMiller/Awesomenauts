@@ -40,7 +40,9 @@ var game = {
 	// Run on game resources loaded.
 	"loaded" : function () {
                 me.pool.register("player", game.PlayerEntity, true);
-            
+                me.pool.register("PlayerBase", game.PlayerBaseEntity, true);
+                me.pool.register("EnemyBase", game.EnemyBaseEntity, true);
+                
                 var player = me.pool.pull("player", 0, 420, {});
                 me.game.world.addChild(player, 5);
             
