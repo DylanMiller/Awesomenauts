@@ -50,11 +50,11 @@ game.PlayerEntity = me.Entity.extend({
       
      
       
-      else if(this.body.vel.x !== 0){
+      else if(this.body.vel.x !== 0 && !this.renderable.isCurrentAnimation("attack")){
         if(!this.renderable.isCurrentAnimation("walk")) {
             this.renderable.setCurrentAnimation("walk");
         }
-    }else {
+    }else if( !this.renderable.isCurrentAnimation("attack")) {
             this.renderable.setCurrentAnimation("idle"); 
         }
         
@@ -97,7 +97,14 @@ game.PlayerEntity = me.Entity.extend({
              this.body.vel.x = 0;
              this.pos.x = this.pos.x +1;
          }
-     }  
+         if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= 1000){
+            console.log("tower Hit");
+            this.lastHit = this.now;
+            response.b.loseHealth();
+        }
+     }
+     
+        
     
 });
 
@@ -170,5 +177,37 @@ game.EnemyBaseEntity = me.Entity.extend({
     
     onCollision: function(){
         
+    },
+    
+    loseHealth: function(){
+        this.health--;
     }
+    
+});
+
+game.EnemyCreep = me.Entity.extends({
+   init: function(x, y, settings){
+       this._super(me.Entity, "init", [x, y, {
+           image: "creep1",
+           width: 32,
+           height: 64,
+           spritewidth: "32",
+           spriteheight: "64",
+           getShape: function(){
+               return (new me.Rect(0, 0, 32, 64)).toPolygon();
+           }
+       }]);
+       this.health = 10;
+       this.alwaysUpdate = true;
+       
+       this.setVelocity(3, 20);
+       
+       this.type = "EnemyCreep";
+       
+       this.renderable.addAnimation("walk", [3, 4, 5], 80);
+       this.renderable.setCurrentAnimation("walk");
+   }, 
+   update: function(){
+       
+   }
 });
