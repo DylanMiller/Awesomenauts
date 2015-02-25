@@ -43,7 +43,7 @@ var game = {
                 me.pool.register("PlayerBase", game.PlayerBaseEntity);
                 me.pool.register("EnemyBase", game.EnemyBaseEntity);
                 me.pool.register("EnemyCreep", game.EnemyCreepEntity, true);
-                
+                 me.pool.register("GameManager", game.GameManager);
                 var player = me.pool.pull("player", 0, 420, {});
                 me.game.world.addChild(player, 5);
             
