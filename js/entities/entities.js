@@ -10,7 +10,7 @@ game.PlayerEntity = me.Entity.extend({
                     return(new me.Rect( 0, 0, 64, 64)).toPolygon();
                 }
         }]);
-        this.body.setVelocity(5, 20);
+        this.body.setVelocity(25, 15);
         this.facing = "right";
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         this.renderable.addAnimation("idle", [78]);
