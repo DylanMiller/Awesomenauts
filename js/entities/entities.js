@@ -157,7 +157,7 @@ game.EnemyBaseEntity = me.Entity.extend({
             getShape: function() {
                 return (new me.Rect(0, 0, 100, 70)).toPolygon();
             }
-        }])
+        }]);
         this.broken = false;
         this.health = 10;
         this.alwaysUpdate = true;
@@ -209,7 +209,7 @@ game.EnemyCreep = me.Entity.extend({
    }, 
    update: function(delta){
        this.body.update(delta);
-       
+       this.body.vel.x -= this.body.accel.x * me.timer.tick;
        this._super(me.Entity, "update", [delta]);
        return true;
    }
