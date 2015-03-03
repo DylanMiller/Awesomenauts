@@ -22,12 +22,12 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
         //adding the map
-        {name: "level01", type: "tmx", src: "data/map/test.tmx"}
+        {name: "level01", type: "tmx", src: "data/map/test.tmx"},
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
 	 */	
-
+        {name: "music", type: "audio", src: "data/bgm/"}
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/"}
