@@ -6,9 +6,11 @@
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/entities/GameManager.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/entities/PlayerBaseEntity.js</file>
+            <file>file:/C:/xampp/htdocs/Awesomenauts/js/entities/EnemyBaseEntity.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/screens/title.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/resources.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/screens/play.js</file>
+            <file>file:/C:/xampp/htdocs/Awesomenauts/js/entities/EnemyCreep.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/js/entities/entities.js</file>
             <file>file:/C:/xampp/htdocs/Awesomenauts/index.php</file>
         </group>
