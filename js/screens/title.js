@@ -14,8 +14,8 @@ game.TitleScreen = me.ScreenObject.extend({
                    },
                    
                    draw: function(renderer){
-                       this.font.draw(renderer.getContext(), "Regularnauts", 450, 130);
-                       this.font.draw(renderer.getContext(), "Press ENTER or dont Im not a begger", 230, 530);
+                       this.font.draw(renderer.getContext(), "Awesomenauts", 450, 130);
+                       this.font.draw(renderer.getContext(), 'Obama says "Press Enter"', 230, 530);
                    }
                })));
                 
